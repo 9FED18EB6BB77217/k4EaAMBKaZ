@@ -1,0 +1,247 @@
+local Camera = workspace.CurrentCamera
+Holding = false
+function findGoals()
+    for i, v in pairs(workspace:GetDescendants()) do
+        if v.Name == 'StrafingNo' then
+            v.Parent = workspace
+        end
+    end
+end
+local function findClosestPart(position)
+    local closestPart, closestPartMagnitude
+    local tmpMagnitude
+    for i, v in pairs(workspace:GetChildren()) do
+        if v.Name == 'StrafingNo' then
+            if closestPart then
+                tmpMagnitude = (position - v.Position).magnitude
+                if tmpMagnitude < closestPartMagnitude then
+                    closestPart = v
+                    closestPartMagnitude = tmpMagnitude
+                end
+            else
+                closestPart = v
+                closestPartMagnitude = (position - v.Position).magnitude
+            end
+        end
+    end
+    return closestPart
+end
+findGoals()
+local UIS = game:GetService('UserInputService')
+UIS.InputBegan:connect(function(Input, GPE)
+    if not GPE and Input.KeyCode == Enum.KeyCode.X then
+        local lookthat = findClosestPart(game.Players.LocalPlayer.Character.Torso.Position)
+        Holding = true
+        repeat
+            wait(0.01)
+        Camera.CFrame = CFrame.new(Camera.CFrame.p, lookthat.Position + Vector3.new(0, 40, 0)) 
+        until Holding == false
+    end
+end)
+
+UIS.InputEnded:connect(function(Input, GPE)
+    if not GPE and Input.KeyCode == Enum.KeyCode.X then
+        Holding = false
+    end
+end)
+
+ I=0
+ 
+ --BASE
+ 
+local NEWTRIG = Instance.new("Part", Workspace)
+
+NEWTRIG.Name = "StrafingNo"
+
+NEWTRIG.Position = Vector3.new(-35.697, 42.758, -274.204)
+NEWTRIG.Anchored = true
+NEWTRIG.CanCollide = false
+NEWTRIG.Transparency = 1
+
+--2
+
+local NEWTRIG2 = Instance.new("Part", Workspace)
+
+NEWTRIG2.Name = "StrafingNo"
+
+NEWTRIG2.Position = Vector3.new(-225.425, 42.766, -91.769)
+NEWTRIG2.Anchored = true
+NEWTRIG2.CanCollide = false
+NEWTRIG2.Transparency = 1
+
+--3
+
+local NEWTRIG3 = Instance.new("Part", Workspace)
+
+NEWTRIG3.Name = "StrafingNo"
+
+NEWTRIG3.Position = Vector3.new(-225.425, 42.766, 89.93)
+NEWTRIG3.Anchored = true
+NEWTRIG3.CanCollide = false
+NEWTRIG3.Transparency = 1
+
+--4 
+
+local NEWTRIG4 = Instance.new("Part", Workspace)
+
+NEWTRIG4.Name = "StrafingNo"
+
+NEWTRIG4.Position = Vector3.new(-36.014, 42.766, -274.203)
+NEWTRIG4.Anchored = true
+NEWTRIG4.CanCollide = false
+NEWTRIG4.Transparency = 1
+
+--5
+
+local NEWTRIG5 = Instance.new("Part", Workspace)
+
+NEWTRIG5.Name = "StrafingNo"
+
+NEWTRIG5.Position = Vector3.new(-36.014, 42.766, -92.308)
+NEWTRIG5.Anchored = true
+NEWTRIG5.CanCollide = false
+NEWTRIG5.Transparency = 1
+
+--6
+
+
+local NEWTRIG6 = Instance.new("Part", Workspace)
+
+NEWTRIG6.Name = "StrafingNo"
+
+NEWTRIG6.Position = Vector3.new(-36.014, 42.766, 89.713)
+NEWTRIG6.Anchored = true
+NEWTRIG6.CanCollide = false
+NEWTRIG6.Transparency = 1
+
+--7
+
+
+local NEWTRIG7 = Instance.new("Part", Workspace)
+
+NEWTRIG7.Name = "StrafingNo"
+
+NEWTRIG7.Position = Vector3.new(-225.425, 42.766, -274.203)
+NEWTRIG7.Anchored = true
+NEWTRIG7.CanCollide = false
+NEWTRIG7.Transparency = 1
+
+--8
+
+
+local NEWTRIG8 = Instance.new("Part", Workspace)
+
+NEWTRIG8.Name = "StrafingNo"
+
+NEWTRIG8.Position = Vector3.new(-225.425, 42.766, 271.76)
+NEWTRIG8.Anchored = true
+NEWTRIG8.CanCollide = false
+NEWTRIG8.Transparency = 1
+
+--9
+
+
+local NEWTRIG9 = Instance.new("Part", Workspace)
+
+NEWTRIG9.Name = "StrafingNo"
+
+NEWTRIG9.Position = Vector3.new(-36.014, 42.766, 271.754)
+NEWTRIG9.Anchored = true
+NEWTRIG9.CanCollide = false
+NEWTRIG9.Transparency = 1
+
+--10
+
+
+local NEWTRIG10 = Instance.new("Part", Workspace)
+
+NEWTRIG10.Name = "StrafingNo"
+
+NEWTRIG10.Position = Vector3.new(34.586, 42.766, 89.698)
+NEWTRIG10.Anchored = true
+NEWTRIG10.CanCollide = false
+NEWTRIG10.Transparency = 1
+
+--11
+
+
+local NEWTRIG11 = Instance.new("Part", Workspace)
+
+NEWTRIG11.Name = "StrafingNo"
+
+NEWTRIG11.Position = Vector3.new(223.997, 42.766, -92.26)
+NEWTRIG11.Anchored = true
+NEWTRIG11.CanCollide = false
+NEWTRIG11.Transparency = 1
+
+--12
+
+
+local NEWTRIG12 = Instance.new("Part", Workspace)
+
+NEWTRIG12.Name = "StrafingNo"
+
+NEWTRIG12.Position = Vector3.new(34.586, 42.766, 271.76)
+NEWTRIG12.Anchored = true
+NEWTRIG12.CanCollide = false
+NEWTRIG12.Transparency = 1
+
+--13 
+
+
+local NEWTRIG13 = Instance.new("Part", Workspace)
+
+NEWTRIG13.Name = "StrafingNo"
+
+NEWTRIG13.Position = Vector3.new(223.997, 42.766, 89.692)
+NEWTRIG13.Anchored = true
+NEWTRIG13.CanCollide = false
+NEWTRIG13.Transparency = 1
+
+--14
+
+
+local NEWTRIG14 = Instance.new("Part", Workspace)
+
+NEWTRIG14.Name = "StrafingNo"
+
+NEWTRIG14.Position = Vector3.new(223.997, 42.766, 271.754)
+NEWTRIG14.Anchored = true
+NEWTRIG14.CanCollide = false
+NEWTRIG14.Transparency = 1
+
+
+--15
+
+
+local NEWTRIG15 = Instance.new("Part", Workspace)
+
+NEWTRIG15.Name = "StrafingNo"
+
+NEWTRIG15.Position = Vector3.new(34.586, 42.766, -274.196)
+NEWTRIG15.Anchored = true
+NEWTRIG15.CanCollide = false
+NEWTRIG15.Transparency = 1
+
+--16
+
+
+local NEWTRIG16 = Instance.new("Part", Workspace)
+
+NEWTRIG16.Name = "StrafingNo"
+
+NEWTRIG16.Position = Vector3.new(34.586, 42.766, -92.254)
+NEWTRIG16.Anchored = true
+NEWTRIG16.CanCollide = false
+NEWTRIG16.Transparency = 1
+
+--17
+
+local NEWTRIG17 = Instance.new("Part", Workspace)
+
+NEWTRIG17.Name = "StrafingNo"
+
+NEWTRIG17.Position = Vector3.new(223.997, 42.766, -274.203)
+NEWTRIG17.Anchored = true
+NEWTRIG17.CanCollide = false
+NEWTRIG17.Transparency = 1
